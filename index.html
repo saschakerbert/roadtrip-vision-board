@@ -3,128 +3,257 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Great Basin Loop — Road Trip 2026</title>
-<meta name="description" content="SF to Yosemite, Bonneville, Jackson Hole, Yellowstone, the Ruby Mountains, Tahoe, and back.">
+<title>The Great Basin Loop — Road Trip 2026</title>
+<meta name="description" content="2,260 miles through six states: SF, Yosemite, the Bonneville Salt Flats, Jackson Hole, Yellowstone, the Ruby Mountains and Tahoe.">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://saschakerbert.github.io/roadtrip-vision-board/">
+<meta property="og:title" content="The Great Basin Loop — Road Trip 2026">
+<meta property="og:description" content="2,260 miles through six states: SF, Yosemite, the Bonneville Salt Flats, Jackson Hole, Yellowstone, the Ruby Mountains and Tahoe.">
+<meta property="og:image" content="https://saschakerbert.github.io/roadtrip-vision-board/img/og-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e0f12">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230e0f12'/%3E%3Cpath d='M9 23c0-7 14-3 14-11' fill='none' stroke='%23e8a13c' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='9' cy='23' r='3' fill='%23e8a13c'/%3E%3Ccircle cx='23' cy='12' r='3' fill='%23f2f1ec'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="preload" as="image" type="image/webp" fetchpriority="high"
+      imagesrcset="img/hero-1200.webp 1200w, img/hero-2000.webp 2000w, img/hero-3000.webp 3000w"
+      imagesizes="100vw">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<nav id="navdots">
-  <a href="#hero" class="dot active" data-label="Start"></a>
-  <a href="#yosemite" class="dot" data-label="Yosemite"></a>
-  <a href="#bonneville" class="dot" data-label="Bonneville"></a>
-  <a href="#jacksonhole" class="dot" data-label="Jackson Hole"></a>
-  <a href="#yellowstone" class="dot" data-label="Yellowstone"></a>
-  <a href="#rubymountains" class="dot" data-label="Ruby Mountains"></a>
-  <a href="#tahoe" class="dot" data-label="Tahoe"></a>
-  <a href="#route" class="dot" data-label="The Route"></a>
+<div class="grain" aria-hidden="true"></div>
+
+<nav class="rail" aria-label="Sections">
+  <a class="rail__tick is-active" href="#hero"><span>Start</span></a>
+  <a class="rail__tick" href="#yosemite"><span>Yosemite</span></a>
+  <a class="rail__tick" href="#bonneville"><span>Bonneville</span></a>
+  <a class="rail__tick" href="#jacksonhole"><span>Jackson Hole</span></a>
+  <a class="rail__tick" href="#yellowstone"><span>Yellowstone</span></a>
+  <a class="rail__tick" href="#rubymountains"><span>Ruby Mountains</span></a>
+  <a class="rail__tick" href="#tahoe"><span>Tahoe</span></a>
+  <a class="rail__tick" href="#route"><span>The Route</span></a>
 </nav>
 
-<header id="hero" class="hero">
-  <img src="images/hero.jpg" alt="Open desert highway" class="hero-bg">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="kicker">2026 · A Loop Through the West</p>
-    <h1>The Great Basin Loop</h1>
-    <p class="tagline">SF → Yosemite → Bonneville Salt Flats → Jackson Hole → Yellowstone → Ruby Mountains → Tahoe → SF</p>
-    <a href="#yosemite" class="scroll-cue">Scroll to see the plan ↓</a>
+<header class="hero" id="hero">
+  <div class="hero__media">
+    <picture>
+      <source type="image/webp" sizes="100vw"
+              srcset="img/hero-1200.webp 1200w, img/hero-2000.webp 2000w, img/hero-3000.webp 3000w">
+      <img src="img/hero-2000.jpg" width="2000" height="1501" fetchpriority="high" decoding="async"
+           sizes="100vw" srcset="img/hero-1200.jpg 1200w, img/hero-2000.jpg 2000w, img/hero-3000.jpg 3000w"
+           alt="An empty two-lane highway running through sagebrush toward desert mountains in the Great Basin">
+    </picture>
+  </div>
+  <div class="hero__scrim"></div>
+  <div class="hero__inner">
+    <p class="eyebrow">2026 · A loop through the West</p>
+    <h1 class="hero__title">
+      <span class="msk"><span>The Great</span></span>
+      <span class="msk"><span>Basin Loop</span></span>
+    </h1>
+    <p class="hero__lede">Seven stops, six states, and a lot of empty road in between. San Francisco out to the salt flats, north through the Tetons and Yellowstone, then back down the quiet side of Nevada.</p>
+    <dl class="stats">
+      <div><dt>Distance</dt><dd>2,260 mi</dd></div>
+      <div><dt>Driving</dt><dd>41h 30m</dd></div>
+      <div><dt>States</dt><dd>Six</dd></div>
+      <div><dt>Dates</dt><dd>TBD</dd></div>
+    </dl>
+    <a class="cue" href="#yosemite">Scroll to see the plan</a>
   </div>
 </header>
 
 <main>
 
-  <section class="stop" id="yosemite">
-    <div class="stop-media">
-      <img src="images/yosemite.jpg" alt="Yosemite Valley granite cliffs">
+  <section class="stop stop--full" id="yosemite">
+    <div class="stop__media">
+      <picture>
+        <source type="image/webp" sizes="100vw" srcset="img/yosemite-1200.webp 1200w, img/yosemite-2000.webp 2000w">
+        <img src="img/yosemite-1200.jpg" width="2000" height="1333" loading="lazy" decoding="async"
+             sizes="100vw" srcset="img/yosemite-1200.jpg 1200w, img/yosemite-2000.jpg 2000w"
+             alt="Yosemite Valley from Tunnel View, with El Capitan on the left, Half Dome in the distance and Bridalveil Fall on the right">
+      </picture>
     </div>
-    <div class="stop-copy">
-      <span class="stop-index">01</span>
-      <h2>Yosemite</h2>
-      <p class="stop-sub">California</p>
-      <p>Granite walls, waterfalls, and the first real stretch of the trip. We ease into the miles here — trailheads, valley views, and a night under some of the darkest skies within a day of the Bay.</p>
-    </div>
-  </section>
-
-  <section class="stop reverse" id="bonneville">
-    <div class="stop-media">
-      <img src="images/bonneville.jpg" alt="Bonneville Salt Flats horizon">
-    </div>
-    <div class="stop-copy">
-      <span class="stop-index">02</span>
-      <h2>Bonneville Salt Flats</h2>
-      <p class="stop-sub">Utah</p>
-      <p>Nothing but white salt to the horizon. Home to a century of land-speed records — this is the surreal, otherworldly middle of the trip. Bring a wide lens and something reflective to shoot.</p>
+    <div class="stop__copy">
+      <p class="stop__index">01</p>
+      <h2 class="stop__title"><span class="msk"><span>Yosemite</span></span></h2>
+      <p class="stop__place">California</p>
+      <p class="stop__body">Granite walls, waterfalls, and the first real stretch of the trip. We ease into the miles here — trailheads, valley views, and a night under some of the darkest skies within a day of the Bay.</p>
     </div>
   </section>
 
-  <section class="stop" id="jacksonhole">
-    <div class="stop-media">
-      <img src="images/jacksonhole.jpg" alt="Grand Teton mountains near Jackson Hole">
+  <section class="stop stop--tall" id="bonneville">
+    <div class="stop__media">
+      <picture>
+        <source type="image/webp" sizes="(max-width: 900px) 100vw, 45vw" srcset="img/bonneville-1200.webp 1200w, img/bonneville-2000.webp 1333w">
+        <img src="img/bonneville-1200.jpg" width="1333" height="2000" loading="lazy" decoding="async"
+             sizes="(max-width: 900px) 100vw, 45vw" srcset="img/bonneville-1200.jpg 1200w, img/bonneville-2000.jpg 1333w"
+             alt="Hexagonal salt crust patterns stretching to distant mountains at sunset on the Bonneville Salt Flats">
+      </picture>
     </div>
-    <div class="stop-copy">
-      <span class="stop-index">03</span>
-      <h2>Jackson Hole</h2>
-      <p class="stop-sub">Wyoming</p>
-      <p>The Tetons rising straight out of the valley floor. A good town to resupply, eat well, and stage for Yellowstone — plus some of the best alpine scenery on the entire loop.</p>
-    </div>
-  </section>
-
-  <section class="stop reverse" id="yellowstone">
-    <div class="stop-media">
-      <img src="images/yellowstone.jpg" alt="Yellowstone geothermal landscape">
-    </div>
-    <div class="stop-copy">
-      <span class="stop-index">04</span>
-      <h2>Yellowstone</h2>
-      <p class="stop-sub">Wyoming</p>
-      <p>Geysers, hot springs, canyons, and wildlife — the anchor stop of the whole trip. Plan for at least a couple of days; there's more here than any one loop through the park can cover.</p>
+    <div class="stop__copy">
+      <p class="stop__index">02</p>
+      <h2 class="stop__title"><span class="msk"><span>Bonneville</span></span><span class="msk"><span>Salt Flats</span></span></h2>
+      <p class="stop__place">Utah</p>
+      <p class="stop__body">Nothing but white salt to the horizon. Home to a century of land-speed records — this is the surreal, otherworldly middle of the trip. Bring a wide lens and something reflective to shoot.</p>
     </div>
   </section>
 
-  <section class="stop" id="rubymountains">
-    <div class="stop-media">
-      <img src="images/rubymountains.jpg" alt="Ruby Mountains alpine terrain">
+  <section class="stop stop--full stop--center" id="jacksonhole">
+    <div class="stop__media">
+      <picture>
+        <source type="image/webp" sizes="100vw" srcset="img/jacksonhole-1200.webp 1200w, img/jacksonhole-2000.webp 2000w">
+        <img src="img/jacksonhole-1200.jpg" width="2000" height="1333" loading="lazy" decoding="async"
+             sizes="100vw" srcset="img/jacksonhole-1200.jpg 1200w, img/jacksonhole-2000.jpg 2000w"
+             alt="The Teton Range at sunset with storm light on the peaks and the Snake River below">
+      </picture>
     </div>
-    <div class="stop-copy">
-      <span class="stop-index">05</span>
-      <h2>Ruby Mountains</h2>
-      <p class="stop-sub">Nevada</p>
-      <p>The turn south, and the quiet part of the trip. Nevada's "Alps" — jagged, glacially-carved, and almost nobody else out there. A reset after the crowds of Yellowstone.</p>
+    <div class="stop__copy">
+      <p class="stop__index">03</p>
+      <h2 class="stop__title"><span class="msk"><span>Jackson Hole</span></span></h2>
+      <p class="stop__place">Wyoming</p>
+      <p class="stop__body">The Tetons rising straight out of the valley floor. A good town to resupply, eat well, and stage for Yellowstone — plus some of the best alpine scenery on the entire loop.</p>
     </div>
   </section>
 
-  <section class="stop reverse" id="tahoe">
-    <div class="stop-media">
-      <img src="images/tahoe.jpg" alt="Lake Tahoe shoreline">
+  <section class="stop stop--inset" id="yellowstone">
+    <div class="stop__media">
+      <picture>
+        <source type="image/webp" sizes="(max-width: 900px) 100vw, 70vw" srcset="img/yellowstone-1200.webp 1200w, img/yellowstone-2000.webp 2000w">
+        <img src="img/yellowstone-1200.jpg" width="2000" height="1329" loading="lazy" decoding="async"
+             sizes="(max-width: 900px) 100vw, 70vw" srcset="img/yellowstone-1200.jpg 1200w, img/yellowstone-2000.jpg 2000w"
+             alt="Steam rising from a geyser across the pale mineral basin at Norris in Yellowstone">
+      </picture>
     </div>
-    <div class="stop-copy">
-      <span class="stop-index">06</span>
-      <h2>Lake Tahoe</h2>
-      <p class="stop-sub">California / Nevada</p>
-      <p>The wind-down. Clear water, easy miles, good food — one last stop to decompress together before the final run back into SF.</p>
+    <div class="stop__copy">
+      <p class="stop__index">04</p>
+      <h2 class="stop__title"><span class="msk"><span>Yellowstone</span></span></h2>
+      <p class="stop__place">Wyoming</p>
+      <p class="stop__body">Geysers, hot springs, canyons, and wildlife — the anchor stop of the whole trip. Plan for at least a couple of days; there's more here than any one loop through the park can cover.</p>
+    </div>
+  </section>
+
+  <section class="stop stop--full stop--quiet" id="rubymountains">
+    <div class="stop__media">
+      <picture>
+        <source type="image/webp" sizes="100vw" srcset="img/rubymountains-1200.webp 1200w, img/rubymountains-2000.webp 2000w">
+        <img src="img/rubymountains-1200.jpg" width="2000" height="1333" loading="lazy" decoding="async"
+             sizes="100vw" srcset="img/rubymountains-1200.jpg 1200w, img/rubymountains-2000.jpg 2000w"
+             alt="Lamoille Canyon cutting through the Ruby Mountains in Nevada under a deep blue sky">
+      </picture>
+    </div>
+    <div class="stop__copy">
+      <p class="stop__index">05</p>
+      <h2 class="stop__title"><span class="msk"><span>Ruby Mountains</span></span></h2>
+      <p class="stop__place">Nevada</p>
+      <p class="stop__body">The turn south, and the quiet part of the trip. Nevada's 'Alps' — jagged, glacially carved, and almost nobody else out there. A reset after the crowds of Yellowstone.</p>
+    </div>
+  </section>
+
+  <section class="stop stop--inset stop--airy" id="tahoe">
+    <div class="stop__media">
+      <picture>
+        <source type="image/webp" sizes="(max-width: 900px) 100vw, 62vw" srcset="img/tahoe-1200.webp 1200w, img/tahoe-2000.webp 2000w">
+        <img src="img/tahoe-1200.jpg" width="2000" height="1332" loading="lazy" decoding="async"
+             sizes="(max-width: 900px) 100vw, 62vw" srcset="img/tahoe-1200.jpg 1200w, img/tahoe-2000.jpg 2000w"
+             alt="Clear turquoise shallows and granite boulders on the pine-lined shore of Lake Tahoe">
+      </picture>
+    </div>
+    <div class="stop__copy">
+      <p class="stop__index">06</p>
+      <h2 class="stop__title"><span class="msk"><span>Lake Tahoe</span></span></h2>
+      <p class="stop__place">California / Nevada</p>
+      <p class="stop__body">The wind-down. Clear water, easy miles, good food — one last stop to decompress together before the final run back into the city.</p>
     </div>
   </section>
 
   <section class="route" id="route">
-    <h2>The Route</h2>
-    <p class="route-sub">Roughly 2,500 miles, out and back through six states.</p>
-    <ol class="route-path">
-      <li><span>SF</span></li>
-      <li><span>Yosemite</span></li>
-      <li><span>Bonneville Salt Flats</span></li>
-      <li><span>Jackson Hole</span></li>
-      <li><span>Yellowstone</span></li>
-      <li><span>Ruby Mountains</span></li>
-      <li><span>Tahoe</span></li>
-      <li><span>SF</span></li>
-    </ol>
-    <img src="images/sf.jpg" alt="San Francisco skyline" class="route-img">
-    <p class="route-note">Dates and exact stops still TBD — this is the shape of it. Shout in the group chat with thoughts.</p>
+    <div class="route__head">
+      <p class="eyebrow">The plan</p>
+      <h2 class="route__title"><span class="msk"><span>Seven legs,</span></span><span class="msk"><span>2,260 miles</span></span></h2>
+      <p class="route__lede">Out through the Sierra and across Nevada, north to the Tetons, then the long quiet run back down. Scroll to trace it.</p>
+    </div>
+
+    <div class="route__grid">
+      <div class="route__sticky">
+        <div class="map" id="map">
+          <div class="map__canvas" aria-hidden="true"></div>
+          <nav class="map__pins" aria-label="Trip stops">
+            <a class="pin" href="#hero"          data-lat="37.7749" data-lon="-122.4194"><i></i><span>San Francisco</span></a>
+            <a class="pin" href="#yosemite"      data-lat="37.7456" data-lon="-119.5936"><i></i><span>Yosemite</span></a>
+            <a class="pin" href="#bonneville"    data-lat="40.7500" data-lon="-113.8500"><i></i><span>Bonneville</span></a>
+            <a class="pin" href="#jacksonhole"   data-lat="43.4799" data-lon="-110.7624"><i></i><span>Jackson Hole</span></a>
+            <a class="pin" href="#yellowstone"   data-lat="44.4605" data-lon="-110.8281"><i></i><span>Yellowstone</span></a>
+            <a class="pin" href="#rubymountains" data-lat="40.6086" data-lon="-115.4739"><i></i><span>Ruby Mountains</span></a>
+            <a class="pin" href="#tahoe"         data-lat="39.0968" data-lon="-120.0324"><i></i><span>Lake Tahoe</span></a>
+          </nav>
+        </div>
+      </div>
+
+      <ol class="legs">
+        <li class="leg">
+          <p class="leg__no">Leg 01</p>
+          <h3 class="leg__name">San Francisco <em>→</em> Yosemite</h3>
+          <p class="leg__data"><b>190 mi</b><span>4h 00m</span><span>I-80 → CA-120</span></p>
+          <p class="leg__note">Out over the Bay Bridge and up through the foothills. The easy one.</p>
+        </li>
+        <li class="leg">
+          <p class="leg__no">Leg 02</p>
+          <h3 class="leg__name">Yosemite <em>→</em> Bonneville Salt Flats</h3>
+          <p class="leg__data"><b>530 mi</b><span>9h 30m</span><span>Tioga Pass → US-395 → US-6</span></p>
+          <p class="leg__note">The big one. Over Tioga Pass at 9,943 ft, then east across Nevada on two-lane highway with almost no services — Tonopah, Ely and Wendover are the fuel stops.</p>
+          <p class="leg__warn">Tioga Pass is seasonal. Closed, this leg reroutes north via Reno: 640 mi, about 11 hours.</p>
+        </li>
+        <li class="leg">
+          <p class="leg__no">Leg 03</p>
+          <h3 class="leg__name">Bonneville <em>→</em> Jackson Hole</h3>
+          <p class="leg__data"><b>400 mi</b><span>6h 45m</span><span>I-80 → I-15 N → US-89</span></p>
+          <p class="leg__note">Past Salt Lake, up through Idaho and into Star Valley, finishing through the Snake River Canyon.</p>
+        </li>
+        <li class="leg">
+          <p class="leg__no">Leg 04</p>
+          <h3 class="leg__name">Jackson Hole <em>→</em> Yellowstone</h3>
+          <p class="leg__data"><b>100 mi</b><span>2h 30m</span><span>US-89/191 via Grand Teton</span></p>
+          <p class="leg__note">The shortest leg and the best drive on the trip — straight up the Tetons and in through Yellowstone's south entrance. Budget three hours; bison jams are real.</p>
+          <p class="leg__warn">Yellowstone's south entrance and Craig Pass run roughly May 8 to Oct 31.</p>
+        </li>
+        <li class="leg">
+          <p class="leg__no">Leg 05</p>
+          <h3 class="leg__name">Yellowstone <em>→</em> Ruby Mountains</h3>
+          <p class="leg__data"><b>490 mi</b><span>9h 00m</span><span>US-20 → I-15 → I-84 → US-93</span></p>
+          <p class="leg__note">Out the west entrance and the long haul south through Idaho into the top of Nevada. The emptiest stretch of the loop.</p>
+        </li>
+        <li class="leg">
+          <p class="leg__no">Leg 06</p>
+          <h3 class="leg__name">Ruby Mountains <em>→</em> Tahoe</h3>
+          <p class="leg__data"><b>360 mi</b><span>6h 00m</span><span>I-80 W → US-50</span></p>
+          <p class="leg__note">Straight west across Nevada on I-80 to Reno, then up over Spooner Summit to the lake.</p>
+        </li>
+        <li class="leg">
+          <p class="leg__no">Leg 07</p>
+          <h3 class="leg__name">Tahoe <em>→</em> San Francisco</h3>
+          <p class="leg__data"><b>190 mi</b><span>3h 45m</span><span>US-50 → I-80 W</span></p>
+          <p class="leg__note">Down Echo Summit and home. Leave early — Sunday afternoon westbound adds an hour.</p>
+        </li>
+      </ol>
+    </div>
+
+    <aside class="window">
+      <p class="eyebrow">When we can actually do this</p>
+      <p class="window__body">Two gates decide the window. <b>Tioga Pass</b> on leg 02 averages opening on 29 May and closing on 3 November, though it has opened as late as 1 July in a heavy snow year. <b>Yellowstone's</b> south entrance and Craig Pass run 8 May to 31 October.</p>
+      <p class="window__body">Both need to be open for the loop to work as drawn, which realistically means <b>mid-June through late October</b>. Dates still TBD — shout in the group chat.</p>
+    </aside>
   </section>
 
 </main>
 
-<footer>
+<footer class="foot">
   <p>Made for the crew coming on this one. See you on the road.</p>
 </footer>
 
