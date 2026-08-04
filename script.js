@@ -6,6 +6,10 @@
 (function () {
   'use strict';
 
+  // Gates every rule that starts an element hidden. If this line never
+  // runs, the page renders plainly instead of blank.
+  document.documentElement.classList.add('js');
+
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const hasViewTimeline = CSS.supports('animation-timeline: view()');
 

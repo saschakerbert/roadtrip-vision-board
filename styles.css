@@ -13,15 +13,13 @@
   src: url('fonts/Basteleur-Moonlight.woff2') format('woff2');
   font-weight: 300; font-style: normal; font-display: swap;
 }
+/* Karrik ships Regular and Italic only — there is no bold cut, so
+   nothing may ask for weight >400 or the browser synthesises a
+   faux bold. Emphasis on this page comes from colour and size. */
 @font-face {
-  font-family: 'Compagnon';
-  src: url('fonts/Compagnon-Light.woff2') format('woff2');
-  font-weight: 300; font-style: normal; font-display: swap;
-}
-@font-face {
-  font-family: 'Compagnon';
-  src: url('fonts/Compagnon-Medium.woff2') format('woff2');
-  font-weight: 500; font-style: normal; font-display: swap;
+  font-family: 'Karrik';
+  src: url('fonts/Karrik-Regular.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
 }
 
 :root {
@@ -32,9 +30,15 @@
   --ink:       #12140F;
   --ink-2:     #191C15;
   --ink-3:     #23271C;
-  --sage:      #8E8772;
   --paper:     #CAC1BE;
   --dusk:      #6F829F;
+
+  /* Measured, not eyeballed. Body is solid rather than an alpha of
+     paper so the ratio is knowable: 9.19 / 8.54 / 7.55 across the
+     three ink levels. Secondary was #8E8772, which failed at 4.25
+     on --ink-3; this passes on all three (7.04 / 6.54 / 5.78). */
+  --body:      #BDB5B1;
+  --sage:      #A79F8A;
 
   /* Exists in exactly one photograph (the Teton alpenglow) and is
      used in exactly two roles on this page: the drawn route, and
@@ -45,7 +49,7 @@
   --rule-2:    rgba(202,193,190,0.32);
 
   --display: 'Basteleur', 'Iowan Old Style', Georgia, serif;
-  --text:    'Compagnon', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --text:    'Karrik', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   --ease: cubic-bezier(.16, 1, .3, 1);
 }
@@ -56,15 +60,19 @@
   html { scroll-behavior: smooth; }
 }
 
-/* clip, not hidden — `overflow: hidden` creates a scroll container
-   and silently re-targets every view() timeline on the page. */
+/* Two things at once here. `overflow-x: clip` not `hidden`, because
+   hidden creates a scroll container and silently re-targets every
+   view() timeline. And light-on-dark blooms optically, so the type
+   compensates on all three axes: more leading, more tracking, and
+   never a weight below 400. */
 body {
   background: var(--ink);
-  color: var(--paper);
+  color: var(--body);
   font-family: var(--text);
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
-  line-height: 1.72;
+  line-height: 1.78;
+  letter-spacing: .004em;
   overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
@@ -205,7 +213,7 @@ a { color: inherit; }
   max-width: 42ch;
   font-size: 15px;
   line-height: 1.78;
-  color: rgba(202,193,190,.82);
+  color: var(--body);
   /* indented off the title's axis */
   margin-left: clamp(0px, 4vw, 4.5rem);
 }
@@ -243,7 +251,7 @@ a { color: inherit; }
 }
 .record > div { display: contents; }
 .record dt { color: var(--sage); }
-.record dd { font-weight: 500; font-variant-numeric: tabular-nums; }
+.record dd { color: var(--paper); font-variant-numeric: tabular-nums; }
 
 /* ============================================================
    STOPS
@@ -282,7 +290,7 @@ a { color: inherit; }
 .stop__body {
   max-width: 46ch;
   font-size: 15px;
-  color: rgba(202,193,190,.84);
+  color: var(--body);
 }
 
 /* --- full bleed --- */
@@ -366,26 +374,31 @@ a { color: inherit; }
 
 /* ---------- reveal choreography ---------------------------- */
 
+/* Scoped to .js, which script.js sets on <html> before anything else.
+   These rules start elements hidden — masked out, translated off, or
+   at opacity 0 — and rely on JS adding .is-in to reveal them. Without
+   that guard, a script failure or a blocked file would leave all six
+   photographs and every heading permanently invisible. */
 @media (prefers-reduced-motion: no-preference) {
-  .stop__media {
+  .js .stop__media {
     mask-image: linear-gradient(to top, #000 var(--wipe, 0%), transparent calc(var(--wipe, 0%) + 20%));
     transition: --wipe 1.3s var(--ease);
   }
-  .stop.is-in .stop__media { --wipe: 130%; }
+  .js .stop.is-in .stop__media { --wipe: 130%; }
 
-  .stop__media img { transform: translate3d(0, var(--py, 0px), 0) scale(1.12); }
+  .js .stop__media img { transform: translate3d(0, var(--py, 0px), 0) scale(1.12); }
 
-  .msk > span { transform: translateY(105%); transition: transform 1.05s var(--ease); }
-  .stop__place, .stop__body, .record, .cue, .route__lede {
+  .js .msk > span { transform: translateY(105%); transition: transform 1.05s var(--ease); }
+  .js .stop__place, .js .stop__body, .js .record, .js .cue, .js .route__lede {
     opacity: 0; transform: translateY(16px);
     transition: opacity 1s var(--ease), transform 1s var(--ease);
   }
-  .is-in .msk > span { transform: translateY(0); }
-  .is-in .stop__place, .is-in .stop__body,
-  .is-in .record, .is-in .cue, .is-in .route__lede { opacity: 1; transform: translateY(0); }
-  .msk:nth-child(2) > span { transition-delay: .09s; }
-  .is-in .stop__place { transition-delay: .15s; }
-  .is-in .stop__body  { transition-delay: .23s; }
+  .js .is-in .msk > span { transform: translateY(0); }
+  .js .is-in .stop__place, .js .is-in .stop__body,
+  .js .is-in .record, .js .is-in .cue, .js .is-in .route__lede { opacity: 1; transform: translateY(0); }
+  .js .msk:nth-child(2) > span { transition-delay: .09s; }
+  .js .is-in .stop__place { transition-delay: .15s; }
+  .js .is-in .stop__body  { transition-delay: .23s; }
 }
 
 @property --wipe { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
@@ -583,7 +596,6 @@ a { color: inherit; }
 .leg__name i {
   font-family: var(--text);
   font-style: normal;
-  font-weight: 500;
   font-size: 12px;
   color: var(--sage);
   vertical-align: .55em;
@@ -597,12 +609,16 @@ a { color: inherit; }
   padding-bottom: 1rem; margin-bottom: 1rem;
   border-bottom: 1px solid var(--rule);
 }
+/* <b> inherits weight 700 from the UA sheet, which Karrik has no cut
+   for — the browser would synthesise it. Size and colour carry the
+   emphasis instead. */
 .leg__data b {
-  font-weight: 500; font-size: 15px;
+  font-weight: 400;
+  font-size: 15px;
   color: var(--paper);
   font-variant-numeric: tabular-nums;
 }
-.leg__note { font-size: 14.5px; color: rgba(202,193,190,.78); max-width: 48ch; }
+.leg__note { font-size: 14.5px; color: var(--body); max-width: 48ch; }
 
 /* marginalia, not an alert box — a rule and a hanging label */
 .leg__caveat {
@@ -616,7 +632,6 @@ a { color: inherit; }
 }
 .leg__caveat i {
   font-style: normal;
-  font-weight: 500;
   color: var(--paper);
   margin-right: .6em;
 }
@@ -637,9 +652,9 @@ a { color: inherit; }
   font-size: 1.35rem;
   line-height: 1.2;
 }
-.window__body { font-size: 14.5px; color: rgba(202,193,190,.8); }
+.window__body { font-size: 14.5px; color: var(--body); }
 .window__body + .window__body { grid-column: 2; margin-top: .9rem; }
-.window__body b { font-weight: 500; color: var(--paper); }
+.window__body b { font-weight: 400; color: var(--paper); }
 
 .foot {
   text-align: center;
