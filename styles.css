@@ -86,7 +86,17 @@ a { color: inherit; }
   outline-offset: 3px;
 }
 
-.msk { display: block; overflow: clip; padding-bottom: .1em; }
+/* The clip box exists for the vertical reveal, but `overflow: clip`
+   clips both axes — so a glyph wider than the column gets sliced.
+   Pad horizontally for slack and pull it back with a matching
+   negative margin, so the optical left edge is unchanged. */
+.msk {
+  display: block;
+  overflow: clip;
+  padding-bottom: .1em;
+  padding-inline: .16em;
+  margin-inline: -.16em;
+}
 .msk > span { display: block; }
 
 /* ---------- photographic grade -----------------------------
@@ -302,7 +312,7 @@ a { color: inherit; }
 }
 .stop--full .stop__copy {
   align-self: flex-end;
-  width: min(720px, 100%);
+  width: min(880px, 100%);
   padding: clamp(2.5rem, 7vw, 6.5rem);
 }
 
@@ -321,7 +331,7 @@ a { color: inherit; }
 .stop--full.stop--quiet::after {
   background: linear-gradient(285deg, rgba(18,20,15,.88) 0%, rgba(18,20,15,.4) 46%, rgba(18,20,15,.08) 80%);
 }
-.stop--full.stop--quiet .stop__copy { width: min(540px, 100%); text-align: right; }
+.stop--full.stop--quiet .stop__copy { width: min(660px, 100%); text-align: right; }
 .stop--full.stop--quiet .stop__title { font-size: clamp(2rem, 4.2vw, 3.8rem); }
 .stop--full.stop--quiet .stop__body { margin-left: auto; }
 
@@ -337,7 +347,7 @@ a { color: inherit; }
   align-self: stretch;
   max-height: 80svh;
 }
-.stop--tall .stop__copy { flex: 1; max-width: 600px; }
+.stop--tall .stop__copy { flex: 1; max-width: 760px; }
 
 /* --- inset plate --- */
 .stop--inset {
