@@ -666,6 +666,93 @@ a { color: inherit; }
 .window__body + .window__body { grid-column: 2; margin-top: .9rem; }
 .window__body b { font-weight: 400; color: var(--paper); }
 
+/* ============================================================
+   ITINERARY — the log
+   ============================================================ */
+
+.itinerary {
+  padding: clamp(6rem, 15vh, 11rem) clamp(1.5rem, 6vw, 6.5rem) clamp(4rem, 9vh, 7rem);
+  background: var(--ink-2);
+}
+.itin__head { width: min(1300px, 100%); margin: 0 auto clamp(3rem, 7vh, 5.5rem); }
+.itin__title {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(2.3rem, 6vw, 5rem);
+  line-height: .95;
+  letter-spacing: -.01em;
+  margin-bottom: 1.1rem;
+}
+/* .itin__lede carries the .route__lede class too, so it gets the
+   same fade-up reveal for free — one ruleset, two sections. */
+
+.days {
+  list-style: none;
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+.day {
+  display: grid;
+  grid-template-columns: 9.5rem 1fr;
+  column-gap: 1.5rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--rule);
+}
+.day:first-child { border-top: 0; padding-top: 0; }
+.day__date {
+  grid-column: 1;
+  padding-top: .2rem;
+  font-size: 12px;
+  color: var(--sage);
+  font-variant-numeric: tabular-nums;
+}
+.day__place {
+  grid-column: 2;
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  line-height: 1.2;
+}
+.day__note {
+  grid-column: 2;
+  margin-top: .4rem;
+  font-size: 13.5px;
+  color: var(--body);
+  max-width: 46ch;
+}
+
+/* marginalia, same device as the leg caveats — a rule and a label,
+   never a bordered box */
+.flags {
+  width: min(900px, 100%);
+  margin: clamp(4rem, 9vh, 7rem) auto 0;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--rule-2);
+}
+.flags__head {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: 1.35rem;
+  margin-bottom: 1.2rem;
+}
+.flags__list { list-style: none; }
+.flags__list li {
+  padding-top: .9rem;
+  margin-top: .9rem;
+  border-top: 1px solid var(--rule);
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--body);
+}
+.flags__list li:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.flags__list i {
+  font-style: normal;
+  color: var(--paper);
+  margin-right: .5em;
+}
+/* Karrik has no bold cut — see the note by .leg__data b */
+.flags__list b { font-weight: 400; color: var(--paper); }
+
 .foot {
   text-align: center;
   padding: clamp(4rem, 8vh, 6rem) 2rem;
@@ -733,6 +820,8 @@ a { color: inherit; }
   .route-glow { stroke-width: 23; }
   .window { grid-template-columns: 1fr; }
   .window__body + .window__body { grid-column: 1; }
+  .day { grid-template-columns: 1fr; row-gap: .3rem; }
+  .day__date, .day__place, .day__note { grid-column: 1; }
 }
 
 @media (max-width: 900px) {

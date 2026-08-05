@@ -279,7 +279,7 @@
 
   /* ---------- reveals ---------------------------------------- */
 
-  const revealTargets = [...document.querySelectorAll('.stop, .route__head')];
+  const revealTargets = [...document.querySelectorAll('.stop, .route__head, .itin__head')];
   const heroInner = document.querySelector('.hero');
 
   if (reduced.matches) {
